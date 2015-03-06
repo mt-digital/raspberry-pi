@@ -1,0 +1,49 @@
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+        <title>jQuery UI Button - Default functionality</title>
+          <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+            <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+              <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+                <link rel="stylesheet" href="/resources/demos/style.css">
+                  <script>
+  $(function() {
+    $("#1" )
+      .button()
+        .click(function( event ) {
+          window.location.href = "/" + "1"; });
+          });
+  $(function() {
+    $("#2" )
+      .button()
+        .click(function( event ) {
+          window.location.href = "/" + "2"; });
+          });
+  $(function() {
+    $("#3" )
+      .button()
+        .click(function( event ) {
+          window.location.href = "/" + "3"; });
+          });
+  </script>
+  </head>
+
+  <body>
+
+
+{% if led_idx %}
+<h1>I would have toggled LED index: {{ led_idx }}</h1>
+{% else %}
+<h1>No LED selected for toggle!</h1>
+{% endif %}
+
+
+     
+    <button id="1">LED 1</button>
+    <button id="2">LED 2</button>
+    <button id="3">LED 3</button>
+     
+     
+     
+  </body>
+</html>
