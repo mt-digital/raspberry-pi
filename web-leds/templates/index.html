@@ -11,19 +11,24 @@
     $("#1" )
       .button()
         .click(function( event ) {
-          window.location.href = "/" + "1"; });
+            $.post("/1", {name:"donald", genera: "duck"});});
           });
   $(function() {
     $("#2" )
       .button()
         .click(function( event ) {
-          window.location.href = "/" + "2"; });
+            $.post("/2", {name:"donald", genera: "duck"}, function(response, status)
+                {
+                    console.log(response.hello);
+                });}
+                
+              );
           });
   $(function() {
     $("#3" )
       .button()
         .click(function( event ) {
-          window.location.href = "/" + "3"; });
+            $.post("/3", {name:"donald", genera: "duck"});});
           });
   </script>
   </head>
@@ -31,17 +36,16 @@
   <body>
 
 
-{% if led_idx %}
-<h1>I would have toggled LED index: {{ led_idx }}</h1>
-{% else %}
-<h1>No LED selected for toggle!</h1>
-{% endif %}
+<h1>Toggle LEDs!</h1>
+
+
 
 
      
     <button id="1">LED 1</button>
     <button id="2">LED 2</button>
     <button id="3">LED 3</button>
+    <p id=response"></p>
      
      
      
